@@ -1,18 +1,22 @@
 <template>
   <section class="container">
-    <div>
-      <h1 class="title">FindTheWords</h1>
-    </div>
     <div id="rows">
-      <v-app id="inspire">
-        <v-container>
-          <v-layout row wrap>
-            <v-flex xs12 sm6>
-              <v-text-field class="inputs" label="Number of Rows" value="10" outline></v-text-field>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-app>
+      <v-container fluid>
+        <v-layout row wrap>
+          <v-flex xs12 sm10>
+            <v-text-field label="Number of Rows" value="10" outline></v-text-field>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+    <div id="cols">
+      <v-container fluid>
+        <v-layout row wrap>
+          <v-flex xs12 sm10>
+            <v-text-field label="Number of Columns" value="10" outline></v-text-field>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </div>
   </section>
 </template>
