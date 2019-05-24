@@ -8,9 +8,9 @@ Rows of the grid - default to 10
 Columns of the grid - default to 10
 > Words (array)
 An array of words.
-> Search Directions
+> Directions
 Left-Right, Right-Left, Top-Bottom, Bottom-Top, Diagonal-Left-Top-Bottom, Diagonal-Left-Bottom-Top, Diagonal-Right-Top-Bottom, Diagonal-Right-Bottom-Top
-> Difficulty Level
+> Level
 Easy, Medium & Hard
 ``` 
 
