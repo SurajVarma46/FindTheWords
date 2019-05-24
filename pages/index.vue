@@ -3,12 +3,12 @@
     <div>
       <h1 class="title">FindTheWords</h1>
     </div>
-    <div id="app">
+    <div id="rows">
       <v-app id="inspire">
-        <v-container fluid>
-          <v-layout row>
-            <v-flex xs8>
-              <v-text-field label="Number of Rows" value="10.0"></v-text-field>
+        <v-container>
+          <v-layout row wrap>
+            <v-flex xs12 sm6>
+              <v-text-field class="inputs" label="Number of Rows" value="10" outline></v-text-field>
             </v-flex>
           </v-layout>
         </v-container>
@@ -17,6 +17,9 @@
   </section>
 </template>
 
+<script>
+export default {};
+</script>
 
 
 <style>
