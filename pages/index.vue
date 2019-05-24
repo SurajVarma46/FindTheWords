@@ -20,6 +20,20 @@
         </v-layout>
       </v-container>
     </div>
+    <div id="difficulty">
+      <v-container fluid>
+        <v-layout row wrap>
+          <v-flex xs12 sm12>
+            <v-subheader>Choose the difficulty level</v-subheader>
+            <v-radio-group row>
+              <v-radio label="Easy" value="easy"></v-radio>
+              <v-radio label="Medium" value="medium"></v-radio>
+              <v-radio label="Hard" value="hard"></v-radio>
+            </v-radio-group>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
   </section>
 </template>
 
