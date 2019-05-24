@@ -1,53 +1,45 @@
 <template>
-  <section class="container">
-    <div id="rows">
-      <v-container fluid>
-        <v-layout row wrap>
-          <v-flex xs12 sm12>
-            <v-subheader>Enter number of rows</v-subheader>
-            <v-text-field label="Rows" value="10" outline></v-text-field>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-    <div id="cols">
-      <v-container fluid>
-        <v-layout row wrap>
-          <v-flex xs12 sm12>
-            <v-subheader>Enter number of columns</v-subheader>
-            <v-text-field label="Columns" value="10" outline></v-text-field>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-    <div id="difficulty">
-      <v-container fluid>
-        <v-layout row wrap>
-          <v-flex xs12 sm12>
-            <v-subheader>Choose the difficulty level</v-subheader>
-            <v-radio-group row>
-              <v-radio label="Easy" value="1"></v-radio>
-              <v-radio label="Medium" value="2"></v-radio>
-              <v-radio label="Hard" value="3"></v-radio>
-            </v-radio-group>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-    <div id="dirofwords">
-      <v-container fluid>
-        <v-layout>
-          <v-flex xs12 sm12>
-            <v-subheader>Select all the directions of words</v-subheader>
-            <v-checkbox label="Left-Right" value="1"></v-checkbox>
-            <v-checkbox label="Right-left" value="2"></v-checkbox>
-            <v-checkbox label="Top-Bottom" value="3"></v-checkbox>
-            <v-checkbox label="Bottom-Top" value="4"></v-checkbox>
-            <v-checkbox label="Diagonal-Left-Top-Bottom" value="5"></v-checkbox>
-            <v-checkbox label="Diagonal-Left-Bottom-Top" value="6"></v-checkbox>
-            <v-checkbox label="Diagonal-Right-Top-Bottom" value="7"></v-checkbox>
-            <v-checkbox label="Diagonal-Right-Bottom-Top" value="8"></v-checkbox>
-          </v-flex>
+  <section>
+    <div id="inputs">
+      <v-container column>
+        <v-layout column>
+          <v-layout align-start row>
+            <v-flex xs6 sm3>
+              <v-subheader>Enter number of rows:</v-subheader>
+              <br>
+              <br>
+              <v-subheader>Enter number of columns:</v-subheader>
+              <br>
+              <br>
+              <v-subheader>Choose the difficulty level:</v-subheader>
+            </v-flex>
+            <v-flex xs10 sm5>
+              <v-text-field label="Rows" value="10" outline></v-text-field>
+              <v-text-field label="Columns" value="10" outline></v-text-field>
+              <v-radio-group row>
+                <v-radio label="Easy" value="1"></v-radio>
+                <v-radio label="Medium" value="2"></v-radio>
+                <v-radio label="Hard" value="3"></v-radio>
+              </v-radio-group>
+            </v-flex>
+          </v-layout>
+          <v-layout align-start row>
+            <v-flex xs8 sm3>
+              <v-subheader>Choose the directions of words:</v-subheader>
+            </v-flex>
+            <v-flex xs8 sm4>
+              <v-checkbox label="Left-Right" value="1"></v-checkbox>
+              <v-checkbox label="Right-left" value="2"></v-checkbox>
+              <v-checkbox label="Top-Bottom" value="3"></v-checkbox>
+              <v-checkbox label="Bottom-Top" value="4"></v-checkbox>
+            </v-flex>
+            <v-flex xs8 sm5>
+              <v-checkbox label="Diagonal-Left-Top-Bottom" value="5"></v-checkbox>
+              <v-checkbox label="Diagonal-Left-Bottom-Top" value="6"></v-checkbox>
+              <v-checkbox label="Diagonal-Right-Top-Bottom" value="7"></v-checkbox>
+              <v-checkbox label="Diagonal-Right-Bottom-Top" value="8"></v-checkbox>
+            </v-flex>
+          </v-layout>
         </v-layout>
       </v-container>
     </div>
