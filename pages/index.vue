@@ -4,7 +4,10 @@
       <v-container fluid>
         <v-layout row wrap>
           <v-flex xs12 sm10>
-            <v-text-field label="Number of Rows" value="10" outline></v-text-field>
+            <v-subheader>Enter number of rows</v-subheader>
+          </v-flex>
+          <v-flex xs12 sm8>
+            <v-text-field label="Rows" value="10" outline></v-text-field>
           </v-flex>
         </v-layout>
       </v-container>
@@ -13,7 +16,10 @@
       <v-container fluid>
         <v-layout row wrap>
           <v-flex xs12 sm10>
-            <v-text-field label="Number of Columns" value="10" outline></v-text-field>
+            <v-subheader>Enter number of columns</v-subheader>
+          </v-flex>
+          <v-flex xs12 sm8>
+            <v-text-field label="Columns" value="10" outline></v-text-field>
           </v-flex>
         </v-layout>
       </v-container>
