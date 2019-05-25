@@ -23,6 +23,9 @@
       <v-checkbox v-model="dir" label="Diagonal-Left-Bottom-Top" value="6"></v-checkbox>
       <v-checkbox v-model="dir" label="Diagonal-Right-Top-Bottom" value="7"></v-checkbox>
       <v-checkbox v-model="dir" label="Diagonal-Right-Bottom-Top" value="8"></v-checkbox>
+      <div class="text-xs-center">
+        <v-btn round color="green" dark>Generate Grid</v-btn>
+      </div>
     </v-flex>
     <v-flex xs12 sm6 md8 lg8 xl8 class="board-container"></v-flex>
   </v-layout>
