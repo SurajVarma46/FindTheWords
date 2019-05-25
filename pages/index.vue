@@ -102,7 +102,7 @@ export default {
         }
       }
       /*
-      //  for (let k = this.words[i].length; k < this.cols; k++) {
+        for (let k = this.words[i].length; k < this.cols; k++) {
           puzzle[i][k] = generate_random_char();
         }
       */
