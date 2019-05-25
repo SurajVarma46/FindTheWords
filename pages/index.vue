@@ -38,6 +38,16 @@
 </template>
 
 <script>
+function generate_random_char() {
+  let random_char = "";
+  let random_ascii;
+  random_ascii = Math.floor(Math.random() * 25 + 97);
+  random_char = String.fromCharCode(random_ascii);
+  return random_char;
+}
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 export default {
   data: function() {
     return {
@@ -48,9 +58,9 @@ export default {
       words: [
         "hello",
         "clear",
-        "cost",
-        "hostile",
-        "game",
+        "orange",
+        "banana",
+        "games",
         "crossword",
         "similar",
         "shameful",
@@ -63,13 +73,39 @@ export default {
   methods: {
     genGrid() {
       const nOfWords = this.words.length;
+      this.words.sort(function(a, b) {
+        return b.length - a.length;
+      });
       let puzzle = [];
       for (let i = 0; i < this.rows; i++) {
         puzzle[i] = [];
         for (let j = 0; j < this.cols; j++) {
-          puzzle[i][j] = "*";
+          puzzle[i][j] = "";
         }
       }
+      let step = 0;
+      while (step < this.words.length) {
+        this.words[step] = this.words[step]
+          .split("")
+          .reverse()
+          .join("");
+        step += 2;
+      }
+
+      for (let m = 0, i = 3; m < this.words.length; m++, i++) {
+        let j = getRandomInt(this.cols - this.words[m].length + 1);
+        for (let k = 0; k < this.words[m].length; k++, j++) {
+          if (i >= this.rows) {
+            i = 0;
+          }
+          puzzle[i][j] = this.words[m][k];
+        }
+      }
+      /*
+        for (let k = this.words[i].length; k < this.cols; k++) {
+          puzzle[i][k] = generate_random_char();
+        }
+      */
       this.puzzle = puzzle;
     }
   },
