@@ -27,28 +27,37 @@
         <v-btn round color="green" dark @click="genGrid">Generate Grid</v-btn>
       </div>
     </v-flex>
-    <v-flex xs12 sm6 md8 lg8 xl8 class="board-container"></v-flex>
+    <v-flex xs12 sm6 md8 lg8 xl8 class="board-container">{{puzzle}}</v-flex>
   </v-layout>
 </template>
 
 <script>
-export default {
-  methods: {
-    genGrid() {
-      nofwords = 10;
-      words = [
-        "hello",
-        "clear",
-        "cost",
-        "hostile",
-        "game",
-        "crossword",
-        "similar",
-        "shameful",
-        "response",
-        "apple"
-      ];
+function genGrid() {
+  nofwords = 10;
+  words = [
+    "hello",
+    "clear",
+    "cost",
+    "hostile",
+    "game",
+    "crossword",
+    "similar",
+    "shameful",
+    "response",
+    "apple"
+  ];
+  puzzle = new Array[rows][cols]();
+  for (i = 0; i < rows; i++) {
+    for (j = 0; j < cols; j++) {
+      puzzle[i][j] = "*";
     }
+  }
+}
+export default {
+  data: function() {
+    return {
+      puzzle: "Generated grid must be shown here"
+    };
   }
 };
 </script>
