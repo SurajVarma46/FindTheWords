@@ -36,10 +36,12 @@ export default {};
 <style>
 .main-container {
 }
+
 .inputs-container {
   opacity: 0.8;
   padding: 1rem;
 }
+
 .board-container {
   border: 1px solid #eee;
   background: #f8f8f8;
