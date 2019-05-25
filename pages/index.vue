@@ -51,21 +51,23 @@ function getRandomInt(max) {
 export default {
   data: function() {
     return {
-      rows: 10,
-      cols: 10,
+      rows: 12,
+      cols: 12,
       diff: 1,
       dir: 1,
       words: [
-        "hello",
-        "clear",
-        "orange",
-        "banana",
-        "games",
-        "crossword",
-        "similar",
-        "shameful",
-        "response",
-        "apple"
+        "HELLO",
+        "CLEAR",
+        "ORANGE",
+        "BANANA",
+        "GAMES",
+        "CROSSWORD",
+        "SIMILAR",
+        "SHAMEFUL",
+        "RESPONSE",
+        "APPLE",
+        "YELLOW",
+        "PURPLE"
       ],
       puzzle: []
     };
@@ -92,15 +94,29 @@ export default {
         step += 2;
       }
 
-      for (let m = 0, i = 3; m < this.words.length; m++, i++) {
+      for (let m = 0, i = 3; m < this.words.length; m = m + 2, i = i + 2) {
         let j = getRandomInt(this.cols - this.words[m].length + 1);
         for (let k = 0; k < this.words[m].length; k++, j++) {
           if (i >= this.rows) {
             i = 0;
           }
-          puzzle[i][j] = this.words[m][k];
+          if (puzzle[i][j] == "" || puzzle[i][j] == this.words[m][k]) {
+            puzzle[i][j] = this.words[m][k];
+          }
         }
       }
+      for (let m = 1, i = 3; m < this.words.length; m = m + 2, i = i + 2) {
+        let j = getRandomInt(this.rows - this.words[m].length + 1);
+        for (let k = 0; k < this.words[m].length; k++, j++) {
+          if (i >= this.cols) {
+            i = 0;
+          }
+          if (puzzle[j][i] == "" || puzzle[j][i] == this.words[m][k]) {
+            puzzle[j][i] = this.words[m][k];
+          }
+        }
+      }
+
       /*
         for (let k = this.words[i].length; k < this.cols; k++) {
           puzzle[i][k] = generate_random_char();
