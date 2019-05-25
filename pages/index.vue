@@ -3,10 +3,10 @@
     <v-flex xs12 sm6 md4 lg4 xl4 class="inputs-container">
       <v-subheader>Enter number of rows:</v-subheader>
 
-      <v-text-field v-model="rows" label="Rows" value="10" outline></v-text-field>
+      <v-text-field v-model="rows" label="Rows" outline></v-text-field>
       <v-subheader>Enter number of columns:</v-subheader>
 
-      <v-text-field v-model="cols" label="Columns" value="10" outline></v-text-field>
+      <v-text-field v-model="cols" label="Columns" outline></v-text-field>
       <v-subheader>Choose the difficulty level:</v-subheader>
       <v-radio-group v-model="diff" row>
         <v-radio label="Easy" value="1"></v-radio>
@@ -27,37 +27,54 @@
         <v-btn round color="green" dark @click="genGrid">Generate Grid</v-btn>
       </div>
     </v-flex>
-    <v-flex xs12 sm6 md8 lg8 xl8 class="board-container">{{puzzle}}</v-flex>
+    <v-flex xs12 sm6 md8 lg8 xl8 class="board-container">
+      <table>
+        <tr v-for="(row,index) in puzzle" :key="index">
+          <td v-for="(col,index2) in row" :key="index2">{{col}}</td>
+        </tr>
+      </table>
+    </v-flex>
   </v-layout>
 </template>
 
 <script>
-function genGrid() {
-  nofwords = 10;
-  words = [
-    "hello",
-    "clear",
-    "cost",
-    "hostile",
-    "game",
-    "crossword",
-    "similar",
-    "shameful",
-    "response",
-    "apple"
-  ];
-  puzzle = new Array[rows][cols]();
-  for (i = 0; i < rows; i++) {
-    for (j = 0; j < cols; j++) {
-      puzzle[i][j] = "*";
-    }
-  }
-}
 export default {
   data: function() {
     return {
-      puzzle: "Generated grid must be shown here"
+      rows: 10,
+      cols: 10,
+      diff: 1,
+      dir: 1,
+      words: [
+        "hello",
+        "clear",
+        "cost",
+        "hostile",
+        "game",
+        "crossword",
+        "similar",
+        "shameful",
+        "response",
+        "apple"
+      ],
+      puzzle: []
     };
+  },
+  methods: {
+    genGrid() {
+      const nOfWords = this.words.length;
+      let puzzle = [];
+      for (let i = 0; i < this.rows; i++) {
+        puzzle[i] = [];
+        for (let j = 0; j < this.cols; j++) {
+          puzzle[i][j] = "*";
+        }
+      }
+      this.puzzle = puzzle;
+    }
+  },
+  mounted() {
+    this.genGrid();
   }
 };
 </script>
@@ -74,5 +91,20 @@ export default {
   background: #f8f8f8;
   margin: 1rem;
   border-radius: 0.25rem;
+}
+
+table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
 }
 </style>
