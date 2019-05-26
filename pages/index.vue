@@ -57,7 +57,7 @@ export default {
       dir: 1,
       words: [
         "HELLO",
-        "CLEAR",
+        "CLEARANCE",
         "ORANGE",
         "BANANA",
         "GAMES",
